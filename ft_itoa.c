@@ -6,9 +6,11 @@
 /*   By: wfan <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/17 16:14:24 by wfan              #+#    #+#             */
-/*   Updated: 2022/11/24 12:34:06 by wfan             ###   ########.fr       */
+/*   Updated: 2022/11/24 17:39:09 by wfan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 int	nbr_len(int nbr)
 {
@@ -43,7 +45,7 @@ int	ft_div(int len)
 	return (i);
 }
 
-void	ft_i_len2(size_t i, size_t len2, char *result, size_t len)
+void	ft_i_len2(int n, size_t i, size_t len2, char *result, size_t len)
 {
 	while (i < len2)
 	{
@@ -55,13 +57,13 @@ void	ft_i_len2(size_t i, size_t len2, char *result, size_t len)
 
 char	*ft_itoa(int n)
 {
-	size_t	i;
+	int	i;
 	size_t	len;
 	size_t	len2;
 	char	*result;
 
 	i = 0;
-	len = nbr_len(nbr);
+	len = nbr_len(n);
 	len2 = len;
 	result = (char *)malloc(sizeof(char) * (len + 1));
 	if (!result)
@@ -75,7 +77,7 @@ char	*ft_itoa(int n)
 		i++;
 		len--;
 	}
-	ft_i_len2(i, len2, result, len)
+	ft_i_len2(n, i, len2, result, len);
 	result[i] = '\0';
 	return (result);
 }
