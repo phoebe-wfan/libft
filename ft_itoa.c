@@ -6,7 +6,7 @@
 /*   By: wfan <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/17 16:14:24 by wfan              #+#    #+#             */
-/*   Updated: 2022/11/17 16:38:38 by wfan             ###   ########.fr       */
+/*   Updated: 2022/11/24 12:34:06 by wfan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,16 @@ int	ft_div(int len)
 	return (i);
 }
 
+void	ft_i_len2(size_t i, size_t len2, char *result, size_t len)
+{
+	while (i < len2)
+	{
+		result[i] = ((n / ft_div(len)) % 10) + 48;
+		len--;
+		i++;
+	}
+}
+
 char	*ft_itoa(int n)
 {
 	size_t	i;
@@ -65,12 +75,7 @@ char	*ft_itoa(int n)
 		i++;
 		len--;
 	}
-	while (i < len2)
-	{
-		result[i] = ((n / ft_div(len)) % 10) + 48;
-		len--;
-		i++;
-	}
+	ft_i_len2(i, len2, result, len)
 	result[i] = '\0';
 	return (result);
 }
