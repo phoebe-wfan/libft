@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnstr.c                                       :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: wfan <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/13 13:16:58 by wfan              #+#    #+#             */
-/*   Updated: 2022/11/13 16:17:49 by wfan             ###   ########.fr       */
+/*   Created: 2022/11/13 17:36:36 by wfan              #+#    #+#             */
+/*   Updated: 2022/11/13 17:50:23 by wfan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,33 +22,35 @@ size_t	strlen(const char *s)
 	while (s[i] != '\0')
 		i++;
 	return (i);
-}	
+}
 
-char	*ft_strnstr(const char *big, const char *little, size_t len)
+size_t	ft_strcpy(char *dst, const char *src)
 {
 	size_t	i;
-	size_t	j;
-	size_t	len_little;
-	char	*b;
-	char	*l;
+	char	*s;
+	char	*d;
 
 	i = 0;
-	b = (char *)big;
-	l = (char *)little;
-	len_little = strlen(l);
-	if (!l)
-		return (big);
-	while (i < len)
+	while (src[i] != '\0' && i < size - 1)
 	{
-		if (b[i] == l[i])
-		{
-			j = 0;
-			while (b[i + j] == l[j])
-				j++;
-			if (j == len_little)
-				return (&b[i]);
-		}
+		dst[i] = src[i];
 		i++;
 	}
-	return (NULL);
+	dst[i] = '\0';
+	return (len_src);
+}
+
+char	*ft_strdup(const char *s)
+{
+	size_t	i;
+	size_t	len;
+	char	*str_cpy;
+
+	i = 0;
+	len = strlen(s);
+	str_cpy = (char *)malloc(sizeof(char) * (len + 1));
+	if (!str_cpy)
+		return (NULL);
+	ft_strcpy(char *str_cpy, const char *s);
+	return (str_cpy);
 }

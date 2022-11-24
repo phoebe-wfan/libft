@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: wfan <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/07 14:58:27 by wfan              #+#    #+#             */
-/*   Updated: 2022/11/12 17:55:08 by wfan             ###   ########.fr       */
+/*   Created: 2022/11/13 16:55:07 by wfan              #+#    #+#             */
+/*   Updated: 2022/11/13 17:35:46 by wfan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,4 +23,17 @@ void	ft_bzero(void *s, size_t n)
 		n--;
 		i++;
 	}
+}
+
+void	*ft_calloc(size_t nmemb, size_t size)
+{	
+	void	*ptr;
+
+	if (nmemb == 0 || size == 0)
+		return (malloc(0));
+	ptr = malloc(nmemb * size);
+	if (ptr == NULL)
+		return (NULL);
+	ft_bzero(ptr, size * nmemb);
+	return (ptr);
 }

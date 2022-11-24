@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnstr.c                                       :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: wfan <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/13 13:16:58 by wfan              #+#    #+#             */
-/*   Updated: 2022/11/13 16:17:49 by wfan             ###   ########.fr       */
+/*   Created: 2022/11/17 14:50:22 by wfan              #+#    #+#             */
+/*   Updated: 2022/11/17 15:03:30 by wfan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,33 +22,33 @@ size_t	strlen(const char *s)
 	while (s[i] != '\0')
 		i++;
 	return (i);
-}	
+}
 
-char	*ft_strnstr(const char *big, const char *little, size_t len)
+char	*ft_strjoin(char const *s1, char const *s2)
 {
+	char	*str_new;
 	size_t	i;
-	size_t	j;
-	size_t	len_little;
-	char	*b;
-	char	*l;
+	size_t	i_new;
+	size_t	len_new;
 
 	i = 0;
-	b = (char *)big;
-	l = (char *)little;
-	len_little = strlen(l);
-	if (!l)
-		return (big);
-	while (i < len)
+	len_new = strlen(s1) + strlen(s2) + 1;
+	str_new = (char *)malloc(len_new);
+	if (!str_new)
+		return (NULL);
+	while (s[i] != '\0')
 	{
-		if (b[i] == l[i])
-		{
-			j = 0;
-			while (b[i + j] == l[j])
-				j++;
-			if (j == len_little)
-				return (&b[i]);
-		}
+		str_new[i_new] = s1[i];
+		i_new++;
 		i++;
 	}
-	return (NULL);
+	i = 0;
+	while (s[i] != '\0')
+	{
+		str_new[i_new] = s2[i];
+		i_new++;
+		i++;
+	}
+	str_new[i_new] = '\0';
+	return (str_new);
 }
