@@ -6,20 +6,18 @@
 /*   By: wfan <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/12 15:38:33 by wfan              #+#    #+#             */
-/*   Updated: 2022/11/12 15:53:54 by wfan             ###   ########.fr       */
+/*   Updated: 2022/11/24 16:35:26 by wfan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_strlen(char *str)
+size_t	strlen(const char *s)
 {
 	size_t	i;
 
 	i = 0;
-	if (!str)
-		return (0);
-	while (str[i])
+	while (s[i] != '\0')
 		i++;
 	return (i);
 }
@@ -32,14 +30,14 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 	size_t	dlen;
 
 	n = size;
-	d = dst;
-	s = src;
+	d = (char *)dst;
+	s = (char *)src;
 	while (n-- != 0 && *d != '\0')
 		d++;
 	dlen = d - dst;
 	n = size - dlen;
 	if (n == 0)
-		return (dlen + ft_strlen (s));
+		return (dlen + ft_strlen (src));
 	while (*s != '\0')
 	{
 		if (n != 1)

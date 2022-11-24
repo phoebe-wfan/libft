@@ -6,7 +6,7 @@
 /*   By: wfan <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/13 17:36:36 by wfan              #+#    #+#             */
-/*   Updated: 2022/11/13 17:50:23 by wfan             ###   ########.fr       */
+/*   Updated: 2022/11/24 16:51:59 by wfan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,9 @@
 
 size_t	strlen(const char *s)
 {
-	int	i;
+	size_t	i;
 
 	i = 0;
-	if (!s)
-		return (0);
 	while (s[i] != '\0')
 		i++;
 	return (i);
@@ -31,26 +29,26 @@ size_t	ft_strcpy(char *dst, const char *src)
 	char	*d;
 
 	i = 0;
-	while (src[i] != '\0' && i < size - 1)
+	s = (char *)src;
+	d = (char *)dst;
+	while (s[i] != '\0')
 	{
-		dst[i] = src[i];
+		d[i] = s[i];
 		i++;
 	}
-	dst[i] = '\0';
-	return (len_src);
+	d[i] = '\0';
+	return (i);
 }
 
 char	*ft_strdup(const char *s)
 {
-	size_t	i;
 	size_t	len;
 	char	*str_cpy;
 
-	i = 0;
 	len = strlen(s);
 	str_cpy = (char *)malloc(sizeof(char) * (len + 1));
 	if (!str_cpy)
 		return (NULL);
-	ft_strcpy(char *str_cpy, const char *s);
+	ft_strcpy(str_cpy, s);
 	return (str_cpy);
 }

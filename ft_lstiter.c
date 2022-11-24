@@ -1,20 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_swap.c                                          :+:      :+:    :+:   */
+/*   ft_lstiter.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wfan <wfan@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: wfan <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/14 16:21:32 by wfan              #+#    #+#             */
-/*   Updated: 2022/08/14 17:42:36 by wfan             ###   ########.fr       */
+/*   Created: 2022/11/24 15:52:02 by wfan              #+#    #+#             */
+/*   Updated: 2022/11/24 15:56:39 by wfan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_swap(int *a, int *b)
-{
-	int	ptr;
+#include "libft.h"
 
-	ptr = *a;
-	*a = *b;
-	*b = ptr;
+void	ft_lstiter(t_list *lst, void (*f)(void *))
+{
+	t_list	*tmp;
+
+	tmp = lst;
+	if (!f)
+		return ;
+	while (tmp)
+	{
+		f(tmp->content);
+		tmp = tmp->next;
+	}
 }

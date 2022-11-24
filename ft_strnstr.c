@@ -6,7 +6,7 @@
 /*   By: wfan <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/13 13:16:58 by wfan              #+#    #+#             */
-/*   Updated: 2022/11/13 16:17:49 by wfan             ###   ########.fr       */
+/*   Updated: 2022/11/24 16:37:34 by wfan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,13 @@
 
 size_t	strlen(const char *s)
 {
-	int	i;
+	size_t	i;
 
 	i = 0;
-	if (!s)
-		return (0);
 	while (s[i] != '\0')
 		i++;
 	return (i);
-}	
+}
 
 char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
@@ -37,7 +35,7 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 	l = (char *)little;
 	len_little = strlen(l);
 	if (!l)
-		return (big);
+		return (b);
 	while (i < len)
 	{
 		if (b[i] == l[i])

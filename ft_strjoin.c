@@ -6,7 +6,7 @@
 /*   By: wfan <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/17 14:50:22 by wfan              #+#    #+#             */
-/*   Updated: 2022/11/17 15:03:30 by wfan             ###   ########.fr       */
+/*   Updated: 2022/11/24 16:54:03 by wfan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,9 @@
 
 size_t	strlen(const char *s)
 {
-	int	i;
+	size_t	i;
 
 	i = 0;
-	if (!s)
-		return (0);
 	while (s[i] != '\0')
 		i++;
 	return (i);
@@ -36,14 +34,14 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	str_new = (char *)malloc(len_new);
 	if (!str_new)
 		return (NULL);
-	while (s[i] != '\0')
+	while (s1[i] != '\0')
 	{
 		str_new[i_new] = s1[i];
 		i_new++;
 		i++;
 	}
 	i = 0;
-	while (s[i] != '\0')
+	while (s2[i] != '\0')
 	{
 		str_new[i_new] = s2[i];
 		i_new++;
