@@ -1,34 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   error.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wfan <marvin@42.fr>                        +#+  +:+       +#+        */
+/*   By: inyancat <inyancat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/12 18:19:23 by wfan              #+#    #+#             */
-/*   Updated: 2022/11/25 14:50:29 by wfan             ###   ########.fr       */
+/*   Created  2016/11/11 16:47:32 by inyancat          #+#    #+#             */
+/*   Updated  2016/11/12 20:21:42 by inyancat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "utils.h"
+#include <stdarg.h>
+extern int g_log_fd;
 
-char	*ft_strchr(const char *s, int c)
+void error(int code, int a, const char *pattern, ...)
 {
-	size_t	i;
-	char	*s2;
-    
-    i = 0;
-	s2 = (char *)s;
-	if (!s2)
-		return (NULL);
-	else
-	{
-		while (s2[i] != c)
-		{
-			if (s2[i] == '\0')
-				return (NULL);
-			i++;
-		}
-		return (&s2[i]);
-	}
+	va_list	va;
+
+	va_start(va, pattern);
+	(void)a;
+	vdprintf(g_log_fd, pattern, va);
+	dprintf(g_log_fd, "\n");
+	va_end(va);
+	exit(code);
 }

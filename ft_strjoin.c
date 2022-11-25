@@ -6,7 +6,7 @@
 /*   By: wfan <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/17 14:50:22 by wfan              #+#    #+#             */
-/*   Updated: 2022/11/24 16:54:03 by wfan             ###   ########.fr       */
+/*   Updated: 2022/11/25 14:51:00 by wfan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	size_t	len_new;
 
 	i = 0;
+    i_new = 0;
 	len_new = strlen(s1) + strlen(s2) + 1;
 	str_new = (char *)malloc(len_new);
 	if (!str_new)
