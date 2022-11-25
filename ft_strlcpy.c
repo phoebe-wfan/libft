@@ -6,13 +6,13 @@
 /*   By: wfan <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/12 14:56:04 by wfan              #+#    #+#             */
-/*   Updated: 2022/11/24 16:31:08 by wfan             ###   ########.fr       */
+/*   Updated: 2022/11/25 21:49:31 by wfan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-size_t	strlen(const char *s)
+/*
+size_t	ft_strlen(const char *s)
 {
 	size_t	i;
 
@@ -20,7 +20,7 @@ size_t	strlen(const char *s)
 	while (s[i] != '\0')
 		i++;
 	return (i);
-}
+}*/
 
 size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 {

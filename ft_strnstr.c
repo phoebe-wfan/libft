@@ -6,13 +6,13 @@
 /*   By: wfan <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/13 13:16:58 by wfan              #+#    #+#             */
-/*   Updated: 2022/11/24 16:37:34 by wfan             ###   ########.fr       */
+/*   Updated: 2022/11/25 21:52:22 by wfan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-size_t	strlen(const char *s)
+/*
+size_t	ft_strlen(const char *s)
 {
 	size_t	i;
 
@@ -20,7 +20,7 @@ size_t	strlen(const char *s)
 	while (s[i] != '\0')
 		i++;
 	return (i);
-}
+}*/
 
 char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
@@ -33,7 +33,7 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 	i = 0;
 	b = (char *)big;
 	l = (char *)little;
-	len_little = strlen(l);
+	len_little = ft_strlen(l);
 	if (!l)
 		return (b);
 	while (i < len)

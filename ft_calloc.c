@@ -6,13 +6,13 @@
 /*   By: wfan <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/13 16:55:07 by wfan              #+#    #+#             */
-/*   Updated: 2022/11/24 16:39:11 by wfan             ###   ########.fr       */
+/*   Updated: 2022/11/25 21:44:51 by wfan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_bzero(void *s, size_t n)
+/*void	ft_bzero(void *s, size_t n)
 {
 	size_t	i;
 	char	*tmp;
@@ -25,8 +25,7 @@ void	ft_bzero(void *s, size_t n)
 		n--;
 		i++;
 	}
-}
-
+}*/
 void	*ft_calloc(size_t nmemb, size_t size)
 {	
 	void	*ptr;
