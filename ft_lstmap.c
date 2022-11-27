@@ -6,17 +6,17 @@
 /*   By: wfan <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/24 15:57:11 by wfan              #+#    #+#             */
-/*   Updated: 2022/11/24 16:06:18 by wfan             ###   ########.fr       */
+/*   Updated: 2022/11/27 13:56:00 by wfan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
+/*
 t_list	*ft_lstnew(void *content)
 {
-	t_list	list;
+	t_list	*list;
 
-	list = malloc(sizeof(t_list));
+	list = (void *)malloc(sizeof(t_list));
 	if (!list)
 		return (NULL);
 	list->content = content;
@@ -35,7 +35,7 @@ void	ft_lstdelone(t_list *lst, void (*del)(void*))
 
 void	ft_lstclear(t_list **lst, void (*del)(void*))
 {
-	t_list	next;
+	t_list	*next;
 
 	if (!lst)
 	{
@@ -43,7 +43,7 @@ void	ft_lstclear(t_list **lst, void (*del)(void*))
 		ft_lstdelone(*lst, del);
 		*lst = next;
 	}
-}
+}*/
 
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {

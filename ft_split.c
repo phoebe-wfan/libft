@@ -6,40 +6,41 @@
 /*   By: wfan <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/17 15:24:13 by wfan              #+#    #+#             */
-/*   Updated: 2022/11/24 17:22:17 by wfan             ###   ########.fr       */
+/*   Updated: 2022/11/27 19:15:25 by wfan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_nbr_words(char const *str, char c)
+size_t	ft_countwords(char const *str, char c)
 {
 	size_t	i;
-	size_t	nbr;
-	char	*s;
+	size_t	count;
 
 	i = 0;
-	nbr = 0;
-	s = (char *)str;
-	while (s[i])
+	count = 0;
+	while (str[i])
 	{
-		while (s[i] == c)
+		while (str[i] == c)
 			i++;
-		while (s[i] != c && s[i])
-			i++;
-		nbr++;
+		if (str[i] != c && str[i])
+		{
+			while (str[i] != c && str[i])
+				i++;
+			count++;
+		}
 	}
-	return (nbr);
+	return (count);
 }
 
-char	**free_tab(char **list, size_t i)
+char	**free_tab(char **res, size_t i)
 {
-	while (list[i])
+	while (res[i])
 	{
-		free(list[i]);
+		free(res[i]);
 		i--;
 	}
-	free(list);
+	free(res);
 	return (NULL);
 }
 
@@ -62,22 +63,20 @@ char	**ft_split(char const *s, char c)
 {
 	size_t	start;
 	size_t	i;
-	char	**list;
-	size_t	nbr_words;
+	char	**res;
 
-	nbr_words = ft_nbr_words(s, c);
-	list = (char **)malloc(nbr_words + 1);
-	if (!list || !s)
+	res = (char **)malloc((ft_countwords(s, c) + 1) * sizeof(char *));
+	if (!res || !s)
 		return (NULL);
 	i = 0;
 	start = 0;
-	while (i < nbr_words)
+	while (i < ft_countwords(s, c))
 	{
-		list[i] = ft_next_word(&start, s, c);
-		if (!list)
-			return (free_tab(list, i));
+		res[i] = ft_next_word(&start, s, c);
+		if (!res)
+			return (free_tab(res, i));
 		i++;
 	}
-	list[i] = 0;
-	return (list);
+	res[i] = 0;
+	return (res);
 }

@@ -6,13 +6,12 @@
 /*   By: wfan <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/24 13:12:42 by wfan              #+#    #+#             */
-/*   Updated: 2022/11/24 13:27:54 by wfan             ###   ########.fr       */
+/*   Updated: 2022/11/27 13:53:13 by wfan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-t_list	*ft_lstlast(t_list *lst)
+/*t_list	*ft_lstlast(t_list *lst)
 {
 	t_list	*tmp;
 
@@ -26,7 +25,8 @@ t_list	*ft_lstlast(t_list *lst)
 		else
 			tmp = tmp->next;
 	}
-}
+	return (NULL);
+}*/
 
 void	ft_lstadd_back(t_list **lst, t_list *new)
 {

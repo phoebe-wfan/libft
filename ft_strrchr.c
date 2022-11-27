@@ -6,7 +6,7 @@
 /*   By: wfan <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/12 16:05:47 by wfan              #+#    #+#             */
-/*   Updated: 2022/11/25 21:53:01 by wfan             ###   ########.fr       */
+/*   Updated: 2022/11/27 16:54:50 by wfan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,18 +24,14 @@ size_t	ft_strlen(const char *s)
 
 char	*ft_strrchr(const char *s, int c)
 {
-	size_t	i_max;
-	char	*s2;
+	int	s_size;
 
-	s2 = (char *)s;
-	if (!s2)
-		return (NULL);
-	i_max = ft_strlen(s) - 1;
-	while (s2[i_max] != c)
+	s_size = ft_strlen(s);
+	while (s_size >= 0)
 	{
-		if (i_max == 0)
-			return (NULL);
-		i_max--;
+		if (((unsigned char *)s)[s_size] == (unsigned char)c)
+			return ((char *)s + s_size);
+		s_size--;
 	}
-	return (&s2[i_max]);
+	return (NULL);
 }

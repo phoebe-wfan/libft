@@ -51,8 +51,10 @@ OBJS_BONUS = ${SRCS_BONUS:.c=.o}
 
 CFLAG = -Wall -Werror -Wextra
 
+CC = gcc
+
 .c.o :
-	gcc -c ${CFLAG} -I ./ $< -o ${<:.c=.o}
+	${CC} -c ${CFLAG} -I ./ $< -o ${<:.c=.o}
 
 ${NAME} : ${OBJS}
 	ar rc $@ ${OBJS}	
@@ -72,5 +74,9 @@ bonus : ${OBJS} ${OBJS_BONUS}
 	ar rc ${NAME} ${OBJS} ${OBJS_BONUS}
 
 rebonus : fclean bonus
+
+so:
+	$(CC) -nostartfiles -fPIC $(CFLAG) $(SRCS) $(SRCS_BONUS)
+	gcc -nostartfiles -shared -o libft.so $(OBJS) $(OBJS_BONUS)
 
 .PHONY : all, clean, fclean, re, bonus, rebonus
