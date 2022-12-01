@@ -6,7 +6,7 @@
 /*   By: wfan <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/24 15:43:35 by wfan              #+#    #+#             */
-/*   Updated: 2022/11/27 13:53:42 by wfan             ###   ########.fr       */
+/*   Updated: 2022/12/01 13:20:29 by wfan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,8 @@ void	ft_lstclear(t_list **lst, void (*del)(void*))
 	t_list	*next;
 
 	if (!lst)
+		return ;
+	while (*lst)
 	{
 		next = (*lst)->next;
 		ft_lstdelone(*lst, del);

@@ -6,7 +6,7 @@
 /*   By: wfan <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/17 15:24:13 by wfan              #+#    #+#             */
-/*   Updated: 2022/11/27 19:15:25 by wfan             ###   ########.fr       */
+/*   Updated: 2022/12/01 12:59:30 by wfan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,6 +65,8 @@ char	**ft_split(char const *s, char c)
 	size_t	i;
 	char	**res;
 
+	if (!s)
+		return (NULL);
 	res = (char **)malloc((ft_countwords(s, c) + 1) * sizeof(char *));
 	if (!res || !s)
 		return (NULL);
