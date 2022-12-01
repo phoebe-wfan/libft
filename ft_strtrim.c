@@ -6,7 +6,7 @@
 /*   By: wfan <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/17 15:04:01 by wfan              #+#    #+#             */
-/*   Updated: 2022/11/27 18:31:30 by wfan             ###   ########.fr       */
+/*   Updated: 2022/12/01 14:12:50 by wfan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,6 +64,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	str_sub[i] = '\0';
 	return (str_sub);
 }
+
 size_t	ft_strcpy(char *dst, const char *src)
 {
 	size_t	i;

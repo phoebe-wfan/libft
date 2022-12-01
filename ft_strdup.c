@@ -6,7 +6,7 @@
 /*   By: wfan <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/13 17:36:36 by wfan              #+#    #+#             */
-/*   Updated: 2022/11/25 21:46:22 by wfan             ###   ########.fr       */
+/*   Updated: 2022/12/01 14:09:30 by wfan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,22 +21,22 @@
 		i++;
 	return (i);
 }*/
-size_t	ft_strcpy(char *dst, const char *src)
+char	*ft_strcpy(char *dst, const char *src)
 {
 	size_t	i;
 	char	*s;
-	char	*d;
 
 	i = 0;
+	if (!src)
+		return (NULL);
 	s = (char *)src;
-	d = (char *)dst;
 	while (s[i] != '\0')
 	{
-		d[i] = s[i];
+		dst[i] = s[i];
 		i++;
 	}
-	d[i] = '\0';
-	return (i);
+	dst[i] = '\0';
+	return (dst);
 }
 
 char	*ft_strdup(const char *s)
