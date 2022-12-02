@@ -56,27 +56,23 @@ CC = gcc
 .c.o :
 	${CC} -c ${CFLAG} -I ./ $< -o ${<:.c=.o}
 
-${NAME} : ${OBJS}
+$(NAME) : ${OBJS}
 	ar rc $@ ${OBJS}	
 
-all : ${NAME}
+all : $(NAME)
 
 
 clean :
 	rm -f ${OBJS} ${OBJS_BONUS}
 
 fclean : clean
-	rm -f ${NAME}
+	rm -f $(NAME)
 
 re : fclean all
 
 bonus : ${OBJS} ${OBJS_BONUS}
-	ar rc ${NAME} ${OBJS} ${OBJS_BONUS}
+	ar rc $(NAME) ${OBJS} ${OBJS_BONUS}
 
 rebonus : fclean bonus
-
-so:
-	$(CC) -nostartfiles -fPIC $(CFLAG) $(SRCS) $(SRCS_BONUS)
-	gcc -nostartfiles -shared -o libft.so $(OBJS) $(OBJS_BONUS)
 
 .PHONY : all, clean, fclean, re, bonus, rebonus
