@@ -6,7 +6,7 @@
 /*   By: wfan <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/12 18:19:23 by wfan              #+#    #+#             */
-/*   Updated: 2022/11/27 18:39:07 by wfan             ###   ########.fr       */
+/*   Updated: 2022/12/02 13:24:40 by wfan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,21 +14,18 @@
 
 char	*ft_strchr(const char *s, int c)
 {
-	size_t	i;
-	char	*s2;
+	unsigned char	*s2;
 
-	i = 0;
-	s2 = (char *)s;
-	if (!s2)
+	if (!s)
 		return (NULL);
-	else
+	s2 = (unsigned char *)s;
+	while (*s2)
 	{
-		while (s2[i] != c)
-		{
-			if (s2[i] == '\0')
-				return (NULL);
-			i++;
-		}
-		return (&s2[i]);
+		if (*s2 == (unsigned char)c)
+			return ((char *)s2);
+		s2++;
 	}
+	if (c == 0)
+		return ((char *)s2);
+	return (NULL);
 }

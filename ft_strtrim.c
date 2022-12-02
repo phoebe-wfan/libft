@@ -6,7 +6,7 @@
 /*   By: wfan <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/17 15:04:01 by wfan              #+#    #+#             */
-/*   Updated: 2022/12/01 14:12:50 by wfan             ###   ########.fr       */
+/*   Updated: 2022/12/02 16:03:05 by wfan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ char	*ft_strchr(const char *s, int c)
 {
 	size_t	i;
 	char	*s2;
-    
+
     i = 0;
 	s2 = (char *)s;
 	if (!s2)
@@ -65,34 +65,25 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	return (str_sub);
 }
 
-size_t	ft_strcpy(char *dst, const char *src)
-{
-	size_t	i;
-	char	*s;
-	char	*d;
-
-	i = 0;
-	s = (char *)src;
-	d = (char *)dst;
-	while (s[i] != '\0')
-	{
-		d[i] = s[i];
-		i++;
-	}
-	d[i] = '\0';
-	return (i);
-}
-
 char	*ft_strdup(const char *s)
 {
-	size_t	len;
 	char	*str_cpy;
+	int		i;
+	size_t	len;
 
-	len = ft_strlen(s);
-	str_cpy = (char *)malloc(sizeof(char) * (len + 1));
+	len = 0;
+	if (s)
+		len = ft_strlen(s);
+	str_cpy = malloc(len + 1);
 	if (!str_cpy)
 		return (NULL);
-	ft_strcpy(str_cpy, s);
+	i = 0;
+	while (s[i])
+	{
+		str_cpy[i] = s[i];
+		i++;
+	}
+	str_cpy[i] = '\0';
 	return (str_cpy);
 }*/
 
@@ -115,3 +106,10 @@ char	*ft_strtrim(char const *s1, char const *set)
 		return (NULL);
 	return (str_new);
 }
+/*
+#include <stdio.h>
+int	main(void)
+{
+	printf("%s\n",ft_strtrim("123kkkk123kkkkkk123", "123"));
+	return (0);
+}*/
