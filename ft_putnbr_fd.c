@@ -6,18 +6,18 @@
 /*   By: wfan <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/18 15:59:52 by wfan              #+#    #+#             */
-/*   Updated: 2022/11/24 17:44:19 by wfan             ###   ########.fr       */
+/*   Updated: 2022/12/04 18:06:09 by wfan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putchar2(char c, int fd)
+static void	ft_putchar2(char c, int fd)
 {
 	write(fd, &c, 1);
 }
 
-void	ft_putrecurs2(int n, int fd)
+static void	ft_putrecurs2(int n, int fd)
 {
 	char	chr;
 

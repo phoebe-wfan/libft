@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-char	*ft_strrev(char	*str)
+static char	*ft_strrev(char	*str)
 {
 	int		i;
 	int		size;
@@ -30,7 +30,7 @@ char	*ft_strrev(char	*str)
 	return (str);
 }
 
-int	ft_intlen(int n)
+static int	ft_intlen(int n)
 {
 	int		i;
 	long	nb;
@@ -50,7 +50,7 @@ int	ft_intlen(int n)
 	return (i);
 }
 
-char	*ft_check(int n)
+static char	*ft_check(int n)
 {
 	char	*res;
 

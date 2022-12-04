@@ -106,10 +106,3 @@ char	*ft_strtrim(char const *s1, char const *set)
 		return (NULL);
 	return (str_new);
 }
-/*
-#include <stdio.h>
-int	main(void)
-{
-	printf("%s\n",ft_strtrim("123kkkk123kkkkkk123", "123"));
-	return (0);
-}*/
