@@ -51,7 +51,7 @@ OBJS_BONUS = ${SRCS_BONUS:.c=.o}
 
 CFLAG = -Wall -Werror -Wextra
 
-CC = gcc
+CC = cc
 
 .c.o :
 	${CC} -c ${CFLAG} -I ./ $< -o ${<:.c=.o}
